@@ -4,7 +4,6 @@ import os
 import sys
 import uuid
 from PIL import Image
-import PIL.Image
 
 s3_client = boto3.client('s3')
 RESIZED_BUCKET_NAME = 'takesone-image-resized'
@@ -12,7 +11,7 @@ RESIZED_IMAGE_SIZE = (200, 100)
 
 def resize_image(image_path, resized_path):
     with Image.open(image_path) as image:
-        image.thumbnail(RESIED_IMAGE_SIZE)
+        image.thumbnail(RESIZED_IMAGE_SIZE)
         image.save(resized_path)
 
 def lambda_handler(event, context):
