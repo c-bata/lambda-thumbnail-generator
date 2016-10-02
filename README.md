@@ -29,6 +29,16 @@ Generating thumbnail when upload image to s3.
 6. Bundle `lambda_function.py`
     - `zip -g packages.zip lambda_function.py`
 
+## Testing
+
+We should customize **Input test event**
+
+- awsRegion: `ap-northeast-1`
+- s3 > object > key: `test.jpg`
+- s3 > bucket > arn: `arn:aws:s3:::<bucket_name>`
+- s3 > bucket > name: `takesone-image-source`
+
+
 ## References
 
 - [Using AWS Lambda with S3(ja)](https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/with-s3.html)
